@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTableModule } from '@angular/material/table';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MatTableModule } from '@angular/material/table';
     BrowserModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatTableModule
+    MatTableModule,
+    Ng2SmartTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
