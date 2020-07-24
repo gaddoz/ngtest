@@ -1,10 +1,17 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatTableModule } from '@angular/material/table';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+      ],
+      imports: [
+        MatTableModule,
+        MatSliderModule,
       ],
     }).compileComponents();
   }));
@@ -22,6 +29,19 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to ngtest!');
+    expect(compiled.querySelector('h1').textContent).toContain('ng test');
+  }));
+  it('should render the table 1', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('table').textContent).toContain('Hydrogen');
+    expect(compiled.querySelector('table').textContent).toContain('Fluorine');
+  }));
+  it('should render the table 2', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('table').textContent).toContain('Fluorine');
   }));
 });
