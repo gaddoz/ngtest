@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ServerDataSource } from 'ng2-smart-table';
+import { ServerDataSource, LocalDataSource } from 'ng2-smart-table';
 
 export interface PeriodicElement {
   name: string;
@@ -34,24 +34,24 @@ export class AppComponent {
   dataSource = ELEMENT_DATA;
   settings = {
     columns: {
-      id: {
-        title: 'ID',
+      position: {
+        title: 'position',
       },
-      albumId: {
-        title: 'Album',
+      name: {
+        title: 'name',
       },
-      title: {
-        title: 'Title',
+      weight: {
+        title: 'weight',
       },
-      url: {
-        title: 'Url',
+      symbol: {
+        title: 'symbol',
       },
     },
   };
+  source = new LocalDataSource(ELEMENT_DATA);
 
-  source: ServerDataSource;
-
-  constructor(http: HttpClient) {
-    this.source = new ServerDataSource(http, { endPoint: 'https://jsonplaceholder.typicode.com/photos' });
+  constructor() {
+    // this.source = new ServerDataSource(http, { endPoint: 'https://jsonplaceholder.typicode.com/photos' });
+    // this.source = new LocalDataSource(ELEMENT_DATA);
   }
 }

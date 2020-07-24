@@ -3,6 +3,8 @@ import { AppComponent } from './app.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTableModule } from '@angular/material/table';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,9 +13,11 @@ describe('AppComponent', () => {
         AppComponent,
       ],
       imports: [
-        MatTableModule,
+        BrowserModule,
+        BrowserAnimationsModule,
         MatSliderModule,
-        Ng2SmartTableModule,
+        MatTableModule,
+        Ng2SmartTableModule
       ],
     }).compileComponents();
   }));
@@ -45,10 +49,16 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('table').textContent).toContain('Fluorine');
   }));
-  it('should render the ng2-table check data row 1', async(() => {
+  it('should render the ng2-table check data No data found', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('ng2-smart-table').textContent).toContain('No data found');
+  }));
+  it('should render the ng2-table check data binding', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('ng2-smart-table').textContent).toContain('Hydrogen');
   }));
 });
