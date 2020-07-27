@@ -1,41 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<h1>ng test</h1>
+<h1>{{ title }}</h1>
+
+<app-sample></app-sample>
+
+<p>:-)</p>
 
 <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
 
 <p>:-)</p>
 
-<table mat-table [dataSource]="dataSource">
-  <ng-container matColumnDef="position">
-    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
-  </ng-container>
-
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-  </ng-container>
-
-  <!-- Weight Column -->
-  <ng-container matColumnDef="weight">
-    <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
-  </ng-container>
-
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="symbol">
-    <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
-  </ng-container>
-
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</table>
+<app-mt-basic-table></app-mt-basic-table>
 
 <p>:-)</p>
 
-<ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+<app-ng-basic-table></app-ng-basic-table>
 
+<p>:-)</p>
+
+<app-mt-http-basic-table></app-mt-http-basic-table>
 
 <p>:-)</p>
